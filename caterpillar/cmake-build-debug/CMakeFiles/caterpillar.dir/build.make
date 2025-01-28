@@ -83,17 +83,81 @@ CMakeFiles/caterpillar.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/main.cpp -o CMakeFiles/caterpillar.dir/main.cpp.s
 
+CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Caterpillar.cpp
+CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o -MF CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o.d -o CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Caterpillar.cpp
+
+CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Caterpillar.cpp > CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.i
+
+CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Caterpillar.cpp -o CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.s
+
+CMakeFiles/caterpillar.dir/model/GameField.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/model/GameField.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameField.cpp
+CMakeFiles/caterpillar.dir/model/GameField.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/caterpillar.dir/model/GameField.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/model/GameField.cpp.o -MF CMakeFiles/caterpillar.dir/model/GameField.cpp.o.d -o CMakeFiles/caterpillar.dir/model/GameField.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameField.cpp
+
+CMakeFiles/caterpillar.dir/model/GameField.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/model/GameField.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameField.cpp > CMakeFiles/caterpillar.dir/model/GameField.cpp.i
+
+CMakeFiles/caterpillar.dir/model/GameField.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/model/GameField.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameField.cpp -o CMakeFiles/caterpillar.dir/model/GameField.cpp.s
+
+CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameLoop.cpp
+CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o -MF CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o.d -o CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameLoop.cpp
+
+CMakeFiles/caterpillar.dir/model/GameLoop.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/model/GameLoop.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameLoop.cpp > CMakeFiles/caterpillar.dir/model/GameLoop.cpp.i
+
+CMakeFiles/caterpillar.dir/model/GameLoop.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/model/GameLoop.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/GameLoop.cpp -o CMakeFiles/caterpillar.dir/model/GameLoop.cpp.s
+
+CMakeFiles/caterpillar.dir/model/Point.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/model/Point.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Point.cpp
+CMakeFiles/caterpillar.dir/model/Point.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/caterpillar.dir/model/Point.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/model/Point.cpp.o -MF CMakeFiles/caterpillar.dir/model/Point.cpp.o.d -o CMakeFiles/caterpillar.dir/model/Point.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Point.cpp
+
+CMakeFiles/caterpillar.dir/model/Point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/model/Point.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Point.cpp > CMakeFiles/caterpillar.dir/model/Point.cpp.i
+
+CMakeFiles/caterpillar.dir/model/Point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/model/Point.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/model/Point.cpp -o CMakeFiles/caterpillar.dir/model/Point.cpp.s
+
 # Object files for target caterpillar
 caterpillar_OBJECTS = \
-"CMakeFiles/caterpillar.dir/main.cpp.o"
+"CMakeFiles/caterpillar.dir/main.cpp.o" \
+"CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o" \
+"CMakeFiles/caterpillar.dir/model/GameField.cpp.o" \
+"CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o" \
+"CMakeFiles/caterpillar.dir/model/Point.cpp.o"
 
 # External object files for target caterpillar
 caterpillar_EXTERNAL_OBJECTS =
 
 caterpillar: CMakeFiles/caterpillar.dir/main.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/model/GameField.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/model/Point.cpp.o
 caterpillar: CMakeFiles/caterpillar.dir/build.make
 caterpillar: CMakeFiles/caterpillar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable caterpillar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable caterpillar"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/caterpillar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

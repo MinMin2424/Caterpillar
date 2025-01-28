@@ -153,6 +153,102 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+model/Caterpillar.o: model/Caterpillar.cpp.o
+.PHONY : model/Caterpillar.o
+
+# target to build an object file
+model/Caterpillar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o
+.PHONY : model/Caterpillar.cpp.o
+
+model/Caterpillar.i: model/Caterpillar.cpp.i
+.PHONY : model/Caterpillar.i
+
+# target to preprocess a source file
+model/Caterpillar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.i
+.PHONY : model/Caterpillar.cpp.i
+
+model/Caterpillar.s: model/Caterpillar.cpp.s
+.PHONY : model/Caterpillar.s
+
+# target to generate assembly for a file
+model/Caterpillar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.s
+.PHONY : model/Caterpillar.cpp.s
+
+model/GameField.o: model/GameField.cpp.o
+.PHONY : model/GameField.o
+
+# target to build an object file
+model/GameField.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameField.cpp.o
+.PHONY : model/GameField.cpp.o
+
+model/GameField.i: model/GameField.cpp.i
+.PHONY : model/GameField.i
+
+# target to preprocess a source file
+model/GameField.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameField.cpp.i
+.PHONY : model/GameField.cpp.i
+
+model/GameField.s: model/GameField.cpp.s
+.PHONY : model/GameField.s
+
+# target to generate assembly for a file
+model/GameField.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameField.cpp.s
+.PHONY : model/GameField.cpp.s
+
+model/GameLoop.o: model/GameLoop.cpp.o
+.PHONY : model/GameLoop.o
+
+# target to build an object file
+model/GameLoop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o
+.PHONY : model/GameLoop.cpp.o
+
+model/GameLoop.i: model/GameLoop.cpp.i
+.PHONY : model/GameLoop.i
+
+# target to preprocess a source file
+model/GameLoop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameLoop.cpp.i
+.PHONY : model/GameLoop.cpp.i
+
+model/GameLoop.s: model/GameLoop.cpp.s
+.PHONY : model/GameLoop.s
+
+# target to generate assembly for a file
+model/GameLoop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameLoop.cpp.s
+.PHONY : model/GameLoop.cpp.s
+
+model/Point.o: model/Point.cpp.o
+.PHONY : model/Point.o
+
+# target to build an object file
+model/Point.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.o
+.PHONY : model/Point.cpp.o
+
+model/Point.i: model/Point.cpp.i
+.PHONY : model/Point.i
+
+# target to preprocess a source file
+model/Point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.i
+.PHONY : model/Point.cpp.i
+
+model/Point.s: model/Point.cpp.s
+.PHONY : model/Point.s
+
+# target to generate assembly for a file
+model/Point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.s
+.PHONY : model/Point.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +261,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... model/Caterpillar.o"
+	@echo "... model/Caterpillar.i"
+	@echo "... model/Caterpillar.s"
+	@echo "... model/GameField.o"
+	@echo "... model/GameField.i"
+	@echo "... model/GameField.s"
+	@echo "... model/GameLoop.o"
+	@echo "... model/GameLoop.i"
+	@echo "... model/GameLoop.s"
+	@echo "... model/Point.o"
+	@echo "... model/Point.i"
+	@echo "... model/Point.s"
 .PHONY : help
 
 
