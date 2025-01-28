@@ -1,0 +1,3 @@
+/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles/caterpillar.dir
+/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
