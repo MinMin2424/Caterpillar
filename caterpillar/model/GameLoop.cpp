@@ -8,13 +8,17 @@
 
 #include <iostream>
 #include <unistd.h>
+#include "../render/Renderer.hpp"
 using namespace std;
 
 void gameLoop() {
     GameField game_field(20, 20);
     Caterpillar caterpillar(10, 10, UP);
+    Renderer renderer;
 
     while (true) {
+
+        renderer.drawField(game_field, caterpillar);
 
         if (caterpillar.checkCollision(game_field.getWidth(), game_field.getHeight())) {
             cout << "Caterpillar collision" << endl;

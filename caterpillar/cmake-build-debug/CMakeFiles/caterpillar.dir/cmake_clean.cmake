@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o.d"
   "CMakeFiles/caterpillar.dir/model/Point.cpp.o"
   "CMakeFiles/caterpillar.dir/model/Point.cpp.o.d"
+  "CMakeFiles/caterpillar.dir/render/Renderer.cpp.o"
+  "CMakeFiles/caterpillar.dir/render/Renderer.cpp.o.d"
   "caterpillar"
   "caterpillar.pdb"
 )

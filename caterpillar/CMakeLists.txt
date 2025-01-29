@@ -11,4 +11,6 @@ add_executable(caterpillar main.cpp
         model/GameLoop.cpp
         model/GameLoop.hpp
         model/Point.cpp
-        model/Point.hpp)
+        model/Point.hpp
+        render/Renderer.cpp
+        render/Renderer.hpp)

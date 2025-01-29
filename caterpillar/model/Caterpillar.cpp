@@ -4,6 +4,7 @@
 
 #include "Caterpillar.hpp"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // Constructor
@@ -38,11 +39,18 @@ Point Caterpillar::getHead() const {
     return body.front();
 }
 
+// Get the body of the caterpillar
+const vector<Point>& Caterpillar::getBody() const {
+    return body;
+}
+
 // Check for collisions
 bool Caterpillar::checkCollision(int fieldWidth, int fieldHeight) const {
     const Point& head = getHead();
+    int borderWidth = fieldWidth - 1;
+    int borderHeight = fieldHeight - 1;
     // Check if the head has collided with the borders
-    if (head.x < 0 || head.y < 0) return true;
+    if (head.x < 0 || head.y < 0 || head.x > borderWidth || head.y > borderHeight) return true;
     // Check if it collided with itself
     for (auto i : body) {
         if (head.isEqual(i)) {

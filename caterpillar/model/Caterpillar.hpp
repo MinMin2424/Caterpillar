@@ -25,6 +25,7 @@ public:
     void setDirection(Direction new_direction);
     void grow();
     [[nodiscard]] Point getHead() const;
+    [[nodiscard]] const vector<Point>& getBody() const;
     [[nodiscard]] bool checkCollision(int fieldWidth, int fieldHeight) const;
     [[nodiscard]] int getScore() const;
 };

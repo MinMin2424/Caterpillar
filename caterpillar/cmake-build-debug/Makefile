@@ -249,6 +249,30 @@ model/Point.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.s
 .PHONY : model/Point.cpp.s
 
+render/Renderer.o: render/Renderer.cpp.o
+.PHONY : render/Renderer.o
+
+# target to build an object file
+render/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/render/Renderer.cpp.o
+.PHONY : render/Renderer.cpp.o
+
+render/Renderer.i: render/Renderer.cpp.i
+.PHONY : render/Renderer.i
+
+# target to preprocess a source file
+render/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/render/Renderer.cpp.i
+.PHONY : render/Renderer.cpp.i
+
+render/Renderer.s: render/Renderer.cpp.s
+.PHONY : render/Renderer.s
+
+# target to generate assembly for a file
+render/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/render/Renderer.cpp.s
+.PHONY : render/Renderer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... model/Point.o"
 	@echo "... model/Point.i"
 	@echo "... model/Point.s"
+	@echo "... render/Renderer.o"
+	@echo "... render/Renderer.i"
+	@echo "... render/Renderer.s"
 .PHONY : help
 
 
