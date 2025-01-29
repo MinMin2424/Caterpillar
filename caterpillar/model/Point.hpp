@@ -19,4 +19,3 @@ public:
 };
 
 #endif //POINT_H
-

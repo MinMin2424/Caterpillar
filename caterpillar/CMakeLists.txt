@@ -15,4 +15,6 @@ add_executable(caterpillar main.cpp
         render/Renderer.cpp
         render/Renderer.hpp
         inputHandler/InputHandler.cpp
-        inputHandler/InputHandler.hpp)
+        inputHandler/InputHandler.hpp
+        inputHandler/InputHandler_Linux.cpp
+        inputHandler/InputHandler_Linux.hpp)

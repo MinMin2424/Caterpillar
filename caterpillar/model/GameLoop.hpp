@@ -14,4 +14,3 @@ public:
 
 
 #endif //GAMELOOP_H
-

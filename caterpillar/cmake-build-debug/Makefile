@@ -153,6 +153,30 @@ inputHandler/InputHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.s
 .PHONY : inputHandler/InputHandler.cpp.s
 
+inputHandler/InputHandler_Linux.o: inputHandler/InputHandler_Linux.cpp.o
+.PHONY : inputHandler/InputHandler_Linux.o
+
+# target to build an object file
+inputHandler/InputHandler_Linux.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.o
+.PHONY : inputHandler/InputHandler_Linux.cpp.o
+
+inputHandler/InputHandler_Linux.i: inputHandler/InputHandler_Linux.cpp.i
+.PHONY : inputHandler/InputHandler_Linux.i
+
+# target to preprocess a source file
+inputHandler/InputHandler_Linux.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.i
+.PHONY : inputHandler/InputHandler_Linux.cpp.i
+
+inputHandler/InputHandler_Linux.s: inputHandler/InputHandler_Linux.cpp.s
+.PHONY : inputHandler/InputHandler_Linux.s
+
+# target to generate assembly for a file
+inputHandler/InputHandler_Linux.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.s
+.PHONY : inputHandler/InputHandler_Linux.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -309,6 +333,9 @@ help:
 	@echo "... inputHandler/InputHandler.o"
 	@echo "... inputHandler/InputHandler.i"
 	@echo "... inputHandler/InputHandler.s"
+	@echo "... inputHandler/InputHandler_Linux.o"
+	@echo "... inputHandler/InputHandler_Linux.i"
+	@echo "... inputHandler/InputHandler_Linux.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

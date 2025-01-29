@@ -32,4 +32,3 @@ public:
 };
 
 #endif //CATERPILLAR_H
-

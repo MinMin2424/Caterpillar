@@ -8,24 +8,35 @@
 
 #include <iostream>
 #include <thread>
-#include <unistd.h>
+
 #include "../inputHandler/InputHandler.hpp"
+#include "../inputHandler/InputHandler_Linux.hpp"
 #include "../render/Renderer.hpp"
 using namespace std;
 
+// The main game loop function that handles the game logic and rendering
 void gameLoop() {
     GameField game_field(40, 10);
     Caterpillar caterpillar(5, 5, UP);
     Renderer renderer;
 
-    cout << "START GAME!" << endl;
+    // cout << "START GAME!" << endl;
 
     while (true) {
+
+        // #ifdef _WIN32
+        //     system("cls");
+        // #else
+        //     system("clear");
+        // #endif
+
+        system("clear");
 
         cout << "Score: " << caterpillar.getScore() << endl;
         renderer.drawField(game_field, caterpillar);
 
-        InputHandler::handleInput(caterpillar);
+        // InputHandler::handleInput(caterpillar);
+        InputHandler_Linux::handleInput(caterpillar);
 
         int dx = 0, dy = 0;
         switch (caterpillar.getDirection()) {
