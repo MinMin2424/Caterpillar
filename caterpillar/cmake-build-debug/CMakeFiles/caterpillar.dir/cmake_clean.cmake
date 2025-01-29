@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.o"
+  "CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.o.d"
   "CMakeFiles/caterpillar.dir/main.cpp.o"
   "CMakeFiles/caterpillar.dir/main.cpp.o.d"
   "CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o"

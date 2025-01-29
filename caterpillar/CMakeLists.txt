@@ -13,4 +13,6 @@ add_executable(caterpillar main.cpp
         model/Point.cpp
         model/Point.hpp
         render/Renderer.cpp
-        render/Renderer.hpp)
+        render/Renderer.hpp
+        inputHandler/InputHandler.cpp
+        inputHandler/InputHandler.hpp)

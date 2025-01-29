@@ -19,12 +19,19 @@ void Caterpillar::move(int dx, int dy) {
     Point newHead = body.front();
     newHead.move(dx, dy);
     body.insert(body.begin(), newHead);
-    body.pop_back();
+    if (length < body.size()) {
+        body.pop_back();
+    }
 }
 
 // Method to set the direction of caterpillar
 void Caterpillar::setDirection(Direction new_direction) {
     direction = new_direction;
+}
+
+// Return caterpillar's direction
+Direction Caterpillar::getDirection() const {
+    return direction;
 }
 
 // Method to grow the caterpillar
@@ -49,11 +56,18 @@ bool Caterpillar::checkCollision(int fieldWidth, int fieldHeight) const {
     const Point& head = getHead();
     int borderWidth = fieldWidth - 1;
     int borderHeight = fieldHeight - 1;
+    //cout << "Head position: (" << head.x << ", " << head.y << ")" << endl;
+
     // Check if the head has collided with the borders
-    if (head.x < 0 || head.y < 0 || head.x > borderWidth || head.y > borderHeight) return true;
+    if (head.x < 0 || head.y < 0 || head.x > borderWidth || head.y > borderHeight) {
+        cout << "Collision with border!" << endl;
+        return true;
+    }
+
     // Check if it collided with itself
-    for (auto i : body) {
-        if (head.isEqual(i)) {
+    for (size_t i = 1; i < body.size(); i++) {
+        if (head.isEqual(body[i])) {
+            cout << "Colission with self!" << endl;
             return true;
         }
     }

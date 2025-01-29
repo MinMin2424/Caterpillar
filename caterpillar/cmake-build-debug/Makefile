@@ -129,6 +129,30 @@ caterpillar/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/build
 .PHONY : caterpillar/fast
 
+inputHandler/InputHandler.o: inputHandler/InputHandler.cpp.o
+.PHONY : inputHandler/InputHandler.o
+
+# target to build an object file
+inputHandler/InputHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.o
+.PHONY : inputHandler/InputHandler.cpp.o
+
+inputHandler/InputHandler.i: inputHandler/InputHandler.cpp.i
+.PHONY : inputHandler/InputHandler.i
+
+# target to preprocess a source file
+inputHandler/InputHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.i
+.PHONY : inputHandler/InputHandler.cpp.i
+
+inputHandler/InputHandler.s: inputHandler/InputHandler.cpp.s
+.PHONY : inputHandler/InputHandler.s
+
+# target to generate assembly for a file
+inputHandler/InputHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.s
+.PHONY : inputHandler/InputHandler.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -282,6 +306,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... caterpillar"
+	@echo "... inputHandler/InputHandler.o"
+	@echo "... inputHandler/InputHandler.i"
+	@echo "... inputHandler/InputHandler.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

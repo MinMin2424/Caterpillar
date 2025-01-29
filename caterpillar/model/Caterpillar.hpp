@@ -23,6 +23,7 @@ public:
     Caterpillar(int startX, int startY, Direction initial_direction);
     void move(int dx, int dy);
     void setDirection(Direction new_direction);
+    Direction getDirection() const;
     void grow();
     [[nodiscard]] Point getHead() const;
     [[nodiscard]] const vector<Point>& getBody() const;
