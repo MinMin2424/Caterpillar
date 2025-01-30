@@ -11,7 +11,8 @@ using namespace std;
 Caterpillar::Caterpillar(int startX, int startY, Direction initial_direction) :
     length(1),
     direction(initial_direction),
-    score(0)
+    score(0),
+    lives(5)
 {body.emplace_back(startX, startY);}
 
 // Method to move caterpillar
@@ -91,5 +92,12 @@ int Caterpillar::getScore() const {
     return score;
 }
 
+void Caterpillar::loseLife() {
+    if (lives > 0) {
+        lives--;
+    }
+}
 
-
+int Caterpillar::getLives() const {
+    return lives;
+}

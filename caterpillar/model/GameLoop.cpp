@@ -64,8 +64,11 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 
     if (caterpillar.checkCollision(game_field.getWidth(), game_field.getHeight())) {
         cout << "Caterpillar collision" << endl;
-        cout << "Game over!" << endl;
-        gameRunning = false;
+        caterpillar.loseLife();
+        if (caterpillar.getLives() <= 0) {
+            cout << "Game over!" << endl;
+            gameRunning = false;
+        }
     }
 
     if (game_field.isCabbageEaten(caterpillar.getHead())) {
@@ -79,7 +82,8 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
 
     system("clear");
-    cout << "Score: " << caterpillar.getScore() << endl;
+    cout << "Score: " << caterpillar.getScore() << "; Lives: " << caterpillar.getLives() << endl;
+    cout << "Collect cabbage * for 1 point!!!" << endl;
     renderer.drawField(game_field, caterpillar);
 
 }
