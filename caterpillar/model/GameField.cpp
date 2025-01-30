@@ -4,22 +4,37 @@
 
 #include "GameField.hpp"
 #include <random>
+
+#include "Caterpillar.hpp"
 using namespace std;
 
 // Constructor
-GameField::GameField(int width, int height) :
+GameField::GameField(int width, int height, Caterpillar &caterpillar) :
     width(width), height(height),
     random(random_device{} ()),
     distributionX(0, width - 1),
     distributionY(0, height - 1)
 {
-    placeCabbage();
+    placeCabbage(caterpillar);
 }
 
 // Place cabbage at a random position
-void GameField::placeCabbage() {
-    cabbage.x = distributionX(random);
-    cabbage.y = distributionY(random);
+void GameField::placeCabbage(Caterpillar &caterpillar) {
+    bool isPositionValid;
+    do {
+        cabbage.x = distributionX(random);
+        cabbage.y = distributionY(random);
+
+        isPositionValid = true;
+        for (const Point& part: caterpillar.getBody()) {
+            if (cabbage.isEqual(part)) {
+                isPositionValid = false;
+                break;
+            }
+        }
+
+    } while (!isPositionValid);
+
 }
 
 // Returns the position of the cabbage

@@ -24,9 +24,21 @@ void Caterpillar::move(int dx, int dy) {
     }
 }
 
-// Method to set the direction of caterpillar
+// Method to set caterpillar's direction
 void Caterpillar::setDirection(Direction new_direction) {
+
+    if (new_direction == UP && direction != DOWN) {
+        new_direction = UP;
+    } else if (new_direction == DOWN && direction != UP) {
+        new_direction = DOWN;
+    } else if (new_direction == LEFT && direction != RIGHT) {
+        new_direction = LEFT;
+    } else if (new_direction == RIGHT && direction != LEFT) {
+        new_direction = RIGHT;
+    }
+
     direction = new_direction;
+
 }
 
 // Return caterpillar's direction

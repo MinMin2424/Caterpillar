@@ -30,16 +30,20 @@ void InputHandler_Linux::handleInput(Caterpillar &caterpillar) {
     switch (getInput()) {
         case 'w': // UP
             caterpillar.setDirection(UP);
-        break;
+            cout << "Moving UP" << endl;
+            break;
         case 's': // DOWN
             caterpillar.setDirection(DOWN);
-        break;
+            cout << "Moving DOWN" << endl;
+            break;
         case 'a': // LEFT
             caterpillar.setDirection(LEFT);
-        break;
+            cout << "Moving LEFT" << endl;
+            break;
         case 'd': // RIGHT
             caterpillar.setDirection(RIGHT);
-        break;
+            cout << "Moving RIGHT" << endl;
+            break;
         case 'q':
             cout << "Quit" << endl;
         exit(0);

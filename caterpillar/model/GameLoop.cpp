@@ -15,50 +15,73 @@
 using namespace std;
 
 // The main game loop function that handles the game logic and rendering
-void gameLoop() {
-    GameField game_field(40, 10);
+void GameLoop::gameLoop() {
+
     Caterpillar caterpillar(5, 5, UP);
+    GameField game_field(40, 10, caterpillar);
     Renderer renderer;
+
+    bool gameRunning = true;
 
     // cout << "START GAME!" << endl;
 
-    while (true) {
+    // const int tick_duration_ms = 500;
+    // auto last_move_time = chrono::steady_clock::now();
 
-        // #ifdef _WIN32
-        //     system("cls");
-        // #else
-        //     system("clear");
-        // #endif
+    while (gameRunning) {
 
-        system("clear");
+        renderGameLoop(game_field, caterpillar, renderer);
 
-        cout << "Score: " << caterpillar.getScore() << endl;
-        renderer.drawField(game_field, caterpillar);
+        // this_thread::sleep_for(std::chrono::milliseconds(100));
 
         // InputHandler::handleInput(caterpillar);
         InputHandler_Linux::handleInput(caterpillar);
 
-        int dx = 0, dy = 0;
-        switch (caterpillar.getDirection()) {
-            case UP: dy = -1; break;
-            case DOWN: dy = 1; break;
-            case LEFT: dx = -1; break;
-            case RIGHT: dx = 1; break;
-        }
-        caterpillar.move(dx, dy);
+        // auto current_time = chrono::steady_clock::now();
+        // auto elapsed_time = chrono::duration_cast<chrono::milliseconds>(current_time - last_move_time);
+        //
+        // if (elapsed_time.count() >= tick_duration_ms) {
+        //     moveCaterpillar(game_field, caterpillar, gameRunning);
+        //     last_move_time = current_time;
+        // }
 
-        if (caterpillar.checkCollision(game_field.getWidth(), game_field.getHeight())) {
-            cout << "Caterpillar collision" << endl;
-            cout << "Game over!" << endl;
-            break;
-        }
+        moveCaterpillar(game_field, caterpillar, gameRunning);
 
-        if (game_field.isCabbageEaten(caterpillar.getHead())) {
-            caterpillar.grow();
-            cout << "Caterpillar grow" << endl;
-            game_field.placeCabbage();
-        }
-        // usleep(200000);
-        this_thread::sleep_for(chrono::milliseconds(100));
+        // this_thread::sleep_for(chrono::milliseconds(500));
+
     }
+
+}
+
+void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
+
+    int dx = 0, dy = 0;
+    switch (caterpillar.getDirection()) {
+        case UP: dy = -1; break;
+        case DOWN: dy = 1; break;
+        case LEFT: dx = -1; break;
+        case RIGHT: dx = 1; break;
+    }
+    caterpillar.move(dx, dy);
+
+    if (caterpillar.checkCollision(game_field.getWidth(), game_field.getHeight())) {
+        cout << "Caterpillar collision" << endl;
+        cout << "Game over!" << endl;
+        gameRunning = false;
+    }
+
+    if (game_field.isCabbageEaten(caterpillar.getHead())) {
+        caterpillar.grow();
+        cout << "Caterpillar grow" << endl;
+        game_field.placeCabbage(caterpillar);
+    }
+
+}
+
+void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
+
+    system("clear");
+    cout << "Score: " << caterpillar.getScore() << endl;
+    renderer.drawField(game_field, caterpillar);
+
 }
