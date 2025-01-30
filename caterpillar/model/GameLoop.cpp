@@ -25,29 +25,27 @@ void GameLoop::gameLoop() {
 
     // cout << "START GAME!" << endl;
 
-    // const int tick_duration_ms = 500;
-    // auto last_move_time = chrono::steady_clock::now();
+    const int tick_duration_ms = 500;
+    auto last_move_time = chrono::steady_clock::now();
 
     while (gameRunning) {
 
         renderGameLoop(game_field, caterpillar, renderer);
 
-        // this_thread::sleep_for(std::chrono::milliseconds(100));
-
         // InputHandler::handleInput(caterpillar);
         InputHandler_Linux::handleInput(caterpillar);
 
-        // auto current_time = chrono::steady_clock::now();
-        // auto elapsed_time = chrono::duration_cast<chrono::milliseconds>(current_time - last_move_time);
-        //
-        // if (elapsed_time.count() >= tick_duration_ms) {
-        //     moveCaterpillar(game_field, caterpillar, gameRunning);
-        //     last_move_time = current_time;
-        // }
+        auto current_time = chrono::steady_clock::now();
+        auto elapsed_time = chrono::duration_cast<chrono::milliseconds>(current_time - last_move_time);
 
-        moveCaterpillar(game_field, caterpillar, gameRunning);
+        if (elapsed_time.count() >= tick_duration_ms) {
+            moveCaterpillar(game_field, caterpillar, gameRunning);
+            last_move_time = current_time;
+        }
 
-        // this_thread::sleep_for(chrono::milliseconds(500));
+        // moveCaterpillar(game_field, caterpillar, gameRunning);
+
+        this_thread::sleep_for(chrono::milliseconds(150));
 
     }
 

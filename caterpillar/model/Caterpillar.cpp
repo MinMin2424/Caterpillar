@@ -90,3 +90,6 @@ bool Caterpillar::checkCollision(int fieldWidth, int fieldHeight) const {
 int Caterpillar::getScore() const {
     return score;
 }
+
+
+

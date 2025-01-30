@@ -7,6 +7,8 @@
 
 #include "Point.hpp"
 #include <random>
+
+#include "Caterpillar.hpp"
 using namespace std;
 
 class GameField {
@@ -19,8 +21,8 @@ private:
     uniform_int_distribution<int> distributionY;
 
 public:
-    GameField(int width, int height);
-    void placeCabbage();
+    GameField(int width, int height, Caterpillar &caterpillar);
+    void placeCabbage(Caterpillar &caterpillar);
     [[nodiscard]] Point getCabbage() const;
     [[nodiscard]] bool isCabbageEaten(const Point& caterpillarHead) const;
     [[nodiscard]] int getWidth() const;
