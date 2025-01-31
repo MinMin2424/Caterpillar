@@ -10,6 +10,14 @@
 using namespace std;
 
 
+/**
+ * This method reads a single character input from the user without waiting for Enter.
+ * It configures the terminal to disable canonical mode and echoing,
+ * so the input is received immediately without needing to press Enter,
+ * and the character is not echoed to the screen.
+ *
+ * @return char The character entered by the user.
+ */
 char InputHandler_Linux::getInput() {
     struct termios oldt, newt;
     char c = '\0';
@@ -30,6 +38,15 @@ char InputHandler_Linux::getInput() {
     return c;
 }
 
+/**
+ * Processes the user's input to update the caterpillar's movement direction.
+ * The direction is determined based on the character entered ('w', 'a', 's', 'd').
+ * If the user inputs 'q', the program exists.
+ * Invalid input results in an error message.
+ *
+ * @param caterpillar The caterpillar whose direction will be updated based on input.
+ */
+
 void InputHandler_Linux::handleInput(Caterpillar &caterpillar) {
 
     char input = getInput();
@@ -41,23 +58,23 @@ void InputHandler_Linux::handleInput(Caterpillar &caterpillar) {
     switch (input) {
         case 'w': // UP
             caterpillar.setDirection(UP);
-        cout << "Moving UP" << endl;
-        break;
+            cout << "Moving UP" << endl;
+            break;
         case 's': // DOWN
             caterpillar.setDirection(DOWN);
-        cout << "Moving DOWN" << endl;
-        break;
+            cout << "Moving DOWN" << endl;
+            break;
         case 'a': // LEFT
             caterpillar.setDirection(LEFT);
-        cout << "Moving LEFT" << endl;
-        break;
+            cout << "Moving LEFT" << endl;
+            break;
         case 'd': // RIGHT
             caterpillar.setDirection(RIGHT);
-        cout << "Moving RIGHT" << endl;
-        break;
+            cout << "Moving RIGHT" << endl;
+            break;
         case 'q':
             cout << "Quit" << endl;
-        exit(0);
+            exit(0);
     }
 
 }

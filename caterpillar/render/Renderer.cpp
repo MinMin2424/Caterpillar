@@ -9,6 +9,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * Method to render the game field by printing its content to the console.
+ *
+ * @param field The game field that contains the positions of the cabbage, strawberry, and boundaries.
+ * @param caterpillar The caterpillar whose head and body positions will be drawn.
+ */
 void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar) {
 
     int width = field.getWidth(); // Get the width of the game field
@@ -37,7 +43,7 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
                 } else if (position.isEqual((cabbagePosition))) {
                     cout << '*'; // Draw the cabbage
                 } else if (position.isEqual(strawberryPosition)) {
-                    cout << 's';
+                    cout << 's'; // Draw the strawberry
                 } else {
                     cout << '.'; // Draw empty space
                 }

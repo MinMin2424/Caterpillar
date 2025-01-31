@@ -14,16 +14,18 @@
 #include "../render/Renderer.hpp"
 using namespace std;
 
-// The main game loop function that handles the game logic and rendering
+/**
+ * The main game loop function that handles the game logic and rendering.
+ *
+ * This function repeatedly calls the rendering and input handling functions, moves the caterpillar,
+ * checks for collisions, and updates the game field during the each game tick.
+ */
 void GameLoop::gameLoop() {
 
     Caterpillar caterpillar(5, 5, UP);
     GameField game_field(40, 10, caterpillar);
     Renderer renderer;
-
     bool gameRunning = true;
-
-    // cout << "START GAME!" << endl;
 
     const int tick_duration_ms = 500;
     auto last_move_time = chrono::steady_clock::now();
@@ -43,14 +45,20 @@ void GameLoop::gameLoop() {
             last_move_time = current_time;
         }
 
-        // moveCaterpillar(game_field, caterpillar, gameRunning);
-
         this_thread::sleep_for(chrono::milliseconds(150));
 
     }
 
 }
 
+/**
+ * Method to move the caterpillar based on its direction and check for collisions or food consumption.
+ *
+ * @param game_field The game field object, used to check for cabbage and strawberry positions,
+ * and place new food items.
+ * @param caterpillar The caterpillar object, which moves and grows depending on the food eaten.
+ * @param gameRunning A reference to a boolean flag indicating if the game is still running.
+ */
 void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
 
     int dx = 0, dy = 0;
@@ -83,6 +91,13 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 
 }
 
+/**
+ * Method to render the game field, displaying the score and lives,and drawing the game state.
+ *
+ * @param game_field The game field object, used for rendering the game objects.
+ * @param caterpillar The caterpillar object, used for rendering the caterpillar.
+ * @param renderer The renderer object, which is used to draw the game state on screen.
+ */
 void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
 
     system("clear");
