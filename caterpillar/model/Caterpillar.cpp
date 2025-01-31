@@ -5,6 +5,7 @@
 #include "Caterpillar.hpp"
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 // Constructor
@@ -48,10 +49,17 @@ Direction Caterpillar::getDirection() const {
 }
 
 // Method to grow the caterpillar
-void Caterpillar::grow() {
+void Caterpillar::grow(Food food) {
+    switch (food) {
+        case CABBAGE:
+            score += 1;
+            break;
+        case STRAWBERRY:
+            score += 2;
+            break;
+    }
     body.emplace_back(body.back());
     length++;
-    score++;
 }
 
 // Get the position of the caterpillar's head

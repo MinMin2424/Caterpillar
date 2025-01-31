@@ -5,11 +5,13 @@
 #ifndef CATERPILLAR_H
 #define CATERPILLAR_H
 #include <vector>
+#include <string>
 using namespace std;
 
 #include "Point.hpp"
 
 enum Direction { UP, DOWN, LEFT, RIGHT };
+enum Food { CABBAGE, STRAWBERRY };
 
 class Caterpillar {
 
@@ -25,7 +27,7 @@ public:
     void move(int dx, int dy);
     void setDirection(Direction new_direction);
     [[nodiscard]] Direction getDirection() const;
-    void grow();
+    void grow(Food food);
     [[nodiscard]] Point getHead() const;
     [[nodiscard]] const vector<Point>& getBody() const;
     [[nodiscard]] bool checkCollision(int fieldWidth, int fieldHeight) const;

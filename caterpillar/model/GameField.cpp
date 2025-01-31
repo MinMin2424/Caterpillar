@@ -27,7 +27,7 @@ void GameField::placeCabbage(Caterpillar &caterpillar) {
 
         isPositionValid = true;
         for (const Point& part: caterpillar.getBody()) {
-            if (cabbage.isEqual(part)) {
+            if (cabbage.isEqual(part) || cabbage.isEqual(getStrawberry())) {
                 isPositionValid = false;
                 break;
             }
@@ -37,14 +37,39 @@ void GameField::placeCabbage(Caterpillar &caterpillar) {
 
 }
 
+void GameField::placeStrawberry(Caterpillar &caterpillar) {
+    bool isPositionValid;
+    do {
+        strawberry.x = distributionX(random);
+        strawberry.y = distributionY(random);
+
+        isPositionValid = true;
+        for (const Point& part: caterpillar.getBody()) {
+            if (strawberry.isEqual(part) || strawberry.isEqual(getCabbage())) {
+                isPositionValid = false;
+                break;
+            }
+        }
+
+    } while (!isPositionValid);
+}
+
 // Returns the position of the cabbage
 Point GameField::getCabbage() const {
     return cabbage;
 }
 
+Point GameField::getStrawberry() const {
+    return strawberry;
+}
+
 // Checks if the cabbage has been eaten by caterpillar
 bool GameField::isCabbageEaten(const Point &caterpillarHead) const {
     return caterpillarHead.isEqual(cabbage);
+}
+
+bool GameField::isStrawberryEaten(const Point &caterpillarHead) const {
+    return caterpillarHead.isEqual(strawberry);
 }
 
 // Gets width

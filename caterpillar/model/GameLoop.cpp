@@ -72,9 +72,13 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
     }
 
     if (game_field.isCabbageEaten(caterpillar.getHead())) {
-        caterpillar.grow();
-        cout << "Caterpillar grow" << endl;
+        caterpillar.grow(CABBAGE);
+        cout << "Caterpillar ate cabbage." << endl;
         game_field.placeCabbage(caterpillar);
+    } else if (game_field.isStrawberryEaten(caterpillar.getHead())) {
+        caterpillar.grow(STRAWBERRY);
+        cout << "Caterpillar ate strawberry." << endl;
+        game_field.placeStrawberry(caterpillar);
     }
 
 }

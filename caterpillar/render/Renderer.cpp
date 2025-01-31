@@ -14,6 +14,7 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
     int width = field.getWidth(); // Get the width of the game field
     int height = field.getHeight(); // Get the height of the game field
     Point cabbagePosition = field.getCabbage(); // Get the position of the cabbage
+    Point strawberryPosition = field.getStrawberry();
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -35,6 +36,8 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
                     cout << 'o'; // Draw the body of the caterpillar
                 } else if (position.isEqual((cabbagePosition))) {
                     cout << '*'; // Draw the cabbage
+                } else if (position.isEqual(strawberryPosition)) {
+                    cout << 's';
                 } else {
                     cout << '.'; // Draw empty space
                 }
@@ -43,3 +46,4 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
         cout << endl;
     }
 }
+
