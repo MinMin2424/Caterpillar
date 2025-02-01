@@ -9,6 +9,26 @@
 #include <iostream>
 using namespace std;
 
+#define ANSI_COLOR_RESET "\x1B[0m"
+#define ANSI_FOREGROUND(color) "\x1B[38;5;" #color "m"
+#define ANSI_BACKGROUND(color) "\x1B[48;5;" #color "m"
+#define ANSI_BOLD "\x1B[1m"
+
+#define HEAD_BODY_FG ANSI_FOREGROUND(22)
+// #define HEAD_BODY_BG ANSI_BACKGROUND(40)
+#define HEAD_BODY_BG ANSI_BACKGROUND(193)
+
+#define STRAWBERRY_FG ANSI_FOREGROUND(160)
+// #define STRAWBERRY_BG ANSI_BACKGROUND(204)
+#define STRAWBERRY_BG ANSI_BACKGROUND(193)
+
+#define CABBAGE_FG ANSI_FOREGROUND(58)
+// #define CABBAGE_BG ANSI_BACKGROUND(228)
+#define CABBAGE_BG ANSI_BACKGROUND(193)
+
+#define EMPTY_FG ANSI_FOREGROUND(16)
+#define EMPTY_BG ANSI_BACKGROUND(193)
+
 /**
  * Method to render the game field by printing its content to the console.
  *
@@ -17,17 +37,17 @@ using namespace std;
  */
 void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar) {
 
-    int width = field.getWidth(); // Get the width of the game field
-    int height = field.getHeight(); // Get the height of the game field
-    Point cabbagePosition = field.getCabbage(); // Get the position of the cabbage
+    int width = field.getWidth();
+    int height = field.getHeight();
+    Point cabbagePosition = field.getCabbage();
     Point strawberryPosition = field.getStrawberry();
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            Point position(x, y); // Create a Point for the current position
+            Point position(x, y);
 
             if (position.isEqual(caterpillar.getHead())) {
-                cout << 'O'; // Draw the head of the caterpillar
+                cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << "O" << ANSI_COLOR_RESET;
 
             } else {
                 // Check if the point position is part of the caterpillar's body
@@ -39,13 +59,17 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
                     }
                 }
                 if (isInCaterpillar) {
-                    cout << 'o'; // Draw the body of the caterpillar
+                    cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << "o" << ANSI_COLOR_RESET;
+
                 } else if (position.isEqual((cabbagePosition))) {
-                    cout << '*'; // Draw the cabbage
+                    cout << CABBAGE_BG << CABBAGE_FG << ANSI_BOLD << "*" << ANSI_COLOR_RESET;
+
                 } else if (position.isEqual(strawberryPosition)) {
-                    cout << 's'; // Draw the strawberry
+                    cout << STRAWBERRY_BG << STRAWBERRY_FG << ANSI_BOLD << "s" << ANSI_COLOR_RESET;
+
                 } else {
-                    cout << '.'; // Draw empty space
+                    cout << EMPTY_BG << EMPTY_FG << ANSI_BOLD << "." << ANSI_COLOR_RESET;
+
                 }
             }
         }

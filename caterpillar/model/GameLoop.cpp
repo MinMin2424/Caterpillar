@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <thread>
+#include <ncurses.h>
 
 #include "../inputHandler/InputHandler.hpp"
 #include "../inputHandler/InputHandler_Linux.hpp"
@@ -18,7 +19,7 @@ using namespace std;
  * The main game loop function that handles the game logic and rendering.
  *
  * This function repeatedly calls the rendering and input handling functions, moves the caterpillar,
- * checks for collisions, and updates the game field during the each game tick.
+ * checks for collisions, and updates the game field during each game tick.
  */
 void GameLoop::gameLoop() {
 
@@ -29,6 +30,8 @@ void GameLoop::gameLoop() {
 
     const int tick_duration_ms = 500;
     auto last_move_time = chrono::steady_clock::now();
+
+    system("clear");
 
     while (gameRunning) {
 
@@ -44,11 +47,8 @@ void GameLoop::gameLoop() {
             moveCaterpillar(game_field, caterpillar, gameRunning);
             last_move_time = current_time;
         }
-
         this_thread::sleep_for(chrono::milliseconds(150));
-
     }
-
 }
 
 /**
@@ -71,7 +71,6 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
     caterpillar.move(dx, dy);
 
     if (caterpillar.checkCollision(game_field.getWidth(), game_field.getHeight())) {
-        cout << "Caterpillar collision" << endl;
         caterpillar.loseLife();
         if (caterpillar.getLives() <= 0) {
             cout << "Game over!" << endl;
@@ -81,11 +80,10 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 
     if (game_field.isCabbageEaten(caterpillar.getHead())) {
         caterpillar.grow(CABBAGE);
-        cout << "Caterpillar ate cabbage." << endl;
         game_field.placeCabbage(caterpillar);
+
     } else if (game_field.isStrawberryEaten(caterpillar.getHead())) {
         caterpillar.grow(STRAWBERRY);
-        cout << "Caterpillar ate strawberry." << endl;
         game_field.placeStrawberry(caterpillar);
     }
 
@@ -100,9 +98,10 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
  */
 void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
 
-    system("clear");
-    cout << "Score: " << caterpillar.getScore() << "; Lives: " << caterpillar.getLives() << endl;
-    cout << "Collect cabbage * for 1 point!!!" << endl;
+    cout << "\033[H";
+    cout << "Score: " << caterpillar.getScore() << "; Lives ♥ : " << caterpillar.getLives() << endl;
+    cout << "Collect cabbage for 1 point!!!" << endl;
+    cout << "Collect strawberry for 2 points!!!" << endl;
     renderer.drawField(game_field, caterpillar);
 
 }

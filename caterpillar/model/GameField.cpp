@@ -24,7 +24,7 @@ GameField::GameField(int width, int height, Caterpillar &caterpillar) :
     distributionY(0, height - 1)
 {
     placeCabbage(caterpillar);
-    placeCabbage(caterpillar);
+    placeStrawberry(caterpillar);
 }
 
 /**
