@@ -21,45 +21,54 @@ using namespace std;
  * This function repeatedly calls the rendering and input handling functions, moves the caterpillar,
  * checks for collisions, and updates the game field during each game tick.
  */
-void GameLoop::gameLoop() {
 
+
+void GameLoop::inputThread(InputHandler_Linux &input_handler, Caterpillar &caterpillar, bool &gameRunning) {
+    while (gameRunning) {
+        input_handler.handleInput(caterpillar);
+        this_thread::sleep_for(chrono::milliseconds(100));
+    }
+}
+
+void GameLoop::renderThread(Renderer &renderer, GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
+    while (gameRunning) {
+        renderGameLoop(game_field, caterpillar, renderer);
+        this_thread::sleep_for(chrono::milliseconds(100));
+    }
+}
+
+void GameLoop::gameLogicThread(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning, int &tickDurationMs) {
+    auto last_move_time = chrono::steady_clock::now();
+    while (gameRunning) {
+        auto current_time = chrono::steady_clock::now();
+        auto elapsed_time = chrono::duration_cast<chrono::milliseconds>(current_time - last_move_time);
+        if (elapsed_time.count() >= tickDurationMs) {
+            moveCaterpillar(game_field, caterpillar, gameRunning);
+            last_move_time = current_time;
+        }
+        this_thread::sleep_for(chrono::milliseconds(100));
+    }
+}
+
+void GameLoop::gameLoop() {
     Caterpillar caterpillar(5, 5, UP);
     GameField game_field(40, 10, caterpillar);
     Renderer renderer;
     InputHandler_Linux input_handler;
     bool gameRunning = true;
+    int tickDurationMs = 500;
 
-    const int tick_duration_ms = 500;
-    auto last_move_time = chrono::steady_clock::now();
+    // system("clear");
 
-    system("clear");
+    thread input_thread(inputThread, ref(input_handler), ref(caterpillar), ref(gameRunning));
+    thread render_thread(renderThread, ref(renderer), ref(game_field), ref(caterpillar), ref(gameRunning));
+    thread game_logic_thread(gameLogicThread, ref(game_field), ref(caterpillar), ref(gameRunning), ref(tickDurationMs));
 
-    while (gameRunning) {
-
-        renderGameLoop(game_field, caterpillar, renderer);
-
-        // InputHandler::handleInput(caterpillar);
-        input_handler.handleInput(caterpillar);
-
-        auto current_time = chrono::steady_clock::now();
-        auto elapsed_time = chrono::duration_cast<chrono::milliseconds>(current_time - last_move_time);
-
-        if (elapsed_time.count() >= tick_duration_ms) {
-            moveCaterpillar(game_field, caterpillar, gameRunning);
-            last_move_time = current_time;
-        }
-        this_thread::sleep_for(chrono::milliseconds(150));
-    }
+    input_thread.join();
+    render_thread.join();
+    game_logic_thread.join();
 }
 
-/**
- * Method to move the caterpillar based on its direction and check for collisions or food consumption.
- *
- * @param game_field The game field object, used to check for cabbage and strawberry positions,
- * and place new food items.
- * @param caterpillar The caterpillar object, which moves and grows depending on the food eaten.
- * @param gameRunning A reference to a boolean flag indicating if the game is still running.
- */
 void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
 
     int dx = 0, dy = 0;
@@ -90,13 +99,6 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 
 }
 
-/**
- * Method to render the game field, displaying the score and lives,and drawing the game state.
- *
- * @param game_field The game field object, used for rendering the game objects.
- * @param caterpillar The caterpillar object, used for rendering the caterpillar.
- * @param renderer The renderer object, which is used to draw the game state on screen.
- */
 void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
 
     cout << "\033[H";
