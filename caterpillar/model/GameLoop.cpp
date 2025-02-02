@@ -16,13 +16,12 @@
 using namespace std;
 
 /**
- * The main game loop function that handles the game logic and rendering.
+ * This method continuously checks for user input and updates the caterpillar's state.
  *
- * This function repeatedly calls the rendering and input handling functions, moves the caterpillar,
- * checks for collisions, and updates the game field during each game tick.
+ * @param input_handler The object responsible for handling input from the user.
+ * @param caterpillar The caterpillar object that gets updated based on the input.
+ * @param gameRunning A reference to the game's running state (bool).
  */
-
-
 void GameLoop::inputThread(InputHandler_Linux &input_handler, Caterpillar &caterpillar, bool &gameRunning) {
     while (gameRunning) {
         input_handler.handleInput(caterpillar);
@@ -30,6 +29,15 @@ void GameLoop::inputThread(InputHandler_Linux &input_handler, Caterpillar &cater
     }
 }
 
+/**
+ * This method repeatedly renders the game field and updates the display,
+ * showing the caterpillar and other game elements.
+ *
+ * @param renderer The object responsible for rendering the game.
+ * @param game_field The game field containing the layout of the game.
+ * @param caterpillar The caterpillar object that is being drawn.
+ * @param gameRunning A reference to the game's running state (bool).
+ */
 void GameLoop::renderThread(Renderer &renderer, GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
     while (gameRunning) {
         renderGameLoop(game_field, caterpillar, renderer);
@@ -37,6 +45,16 @@ void GameLoop::renderThread(Renderer &renderer, GameField &game_field, Caterpill
     }
 }
 
+/**
+ * This method checks if the appropriate amount of time has passed between moves
+ * and updates the caterpillar's position, handles collisions,
+ * and updates the score based on what the caterpillar eats.
+ *
+ * @param game_field The game field containing the layout od the game.
+ * @param caterpillar The caterpillar object whose position is updated.
+ * @param gameRunning A reference to the game's running state (bool).
+ * @param tickDurationMs The time interval (in milliseconds) between each game logic update.
+ */
 void GameLoop::gameLogicThread(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning, int &tickDurationMs) {
     auto last_move_time = chrono::steady_clock::now();
     while (gameRunning) {
@@ -50,6 +68,10 @@ void GameLoop::gameLogicThread(GameField &game_field, Caterpillar &caterpillar, 
     }
 }
 
+/**
+ * The main game loop that starts the threads and controls the flow of the game.
+ * This method initializes the game objects and starts the input, render, and game logic threads.
+ */
 void GameLoop::gameLoop() {
     Caterpillar caterpillar(5, 5, UP);
     GameField game_field(40, 10, caterpillar);
@@ -69,6 +91,14 @@ void GameLoop::gameLoop() {
     game_logic_thread.join();
 }
 
+/**
+ * This method calculates the new position of the caterpillar
+ * based on its direction and updates its position.
+ *
+ * @param game_field The game field where the caterpillar moves.
+ * @param caterpillar The caterpillar object that is being moved.
+ * @param gameRunning A reference to the game's running state (bool).
+ */
 void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
 
     int dx = 0, dy = 0;
@@ -99,6 +129,14 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 
 }
 
+/**
+ * This method updates the console with the current score, lives, game instructions,
+ * and then draws the game field.
+ *
+ * @param game_field The game field to be rendered.
+ * @param caterpillar The caterpillar object to be drawn.
+ * @param renderer The renderer object responsible for drawing the game.
+ */
 void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
 
     cout << "\033[H";
