@@ -83,12 +83,12 @@ clean: CMakeFiles/runTests.dir/clean
 CMakeFiles/runGame.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target runGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target runGame"
 .PHONY : CMakeFiles/runGame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/runGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/runGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/runGame.dir/rule
@@ -109,7 +109,7 @@ CMakeFiles/runGame.dir/clean:
 CMakeFiles/runTests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13,14,15,16 "Built target runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15,16,17 "Built target runTests"
 .PHONY : CMakeFiles/runTests.dir/all
 
 # Build rule for subdir invocation for target.

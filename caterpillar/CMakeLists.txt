@@ -18,6 +18,8 @@ add_executable(runGame main.cpp
         inputHandler/InputHandler.hpp
         inputHandler/InputHandler_Linux.cpp
         inputHandler/InputHandler_Linux.hpp
+        help/Help.cpp
+        help/Help.hpp
 )
 
 enable_testing()

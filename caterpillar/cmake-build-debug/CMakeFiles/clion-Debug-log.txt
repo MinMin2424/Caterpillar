@@ -1,5 +1,4 @@
 /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/gmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "Unix Makefiles" -S /mnt/c/minmin_tranova/Caterpillar/caterpillar -B /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug
--- Found GTest: /usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.14.0")  
--- Configuring done (2.2s)
--- Generating done (0.7s)
+-- Configuring done (0.1s)
+-- Generating done (0.5s)
 -- Build files have been written to: /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug

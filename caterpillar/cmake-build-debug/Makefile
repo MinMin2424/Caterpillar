@@ -152,6 +152,30 @@ runTests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
+help/Help.o: help/Help.cpp.o
+.PHONY : help/Help.o
+
+# target to build an object file
+help/Help.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/help/Help.cpp.o
+.PHONY : help/Help.cpp.o
+
+help/Help.i: help/Help.cpp.i
+.PHONY : help/Help.i
+
+# target to preprocess a source file
+help/Help.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/help/Help.cpp.i
+.PHONY : help/Help.cpp.i
+
+help/Help.s: help/Help.cpp.s
+.PHONY : help/Help.s
+
+# target to generate assembly for a file
+help/Help.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/help/Help.cpp.s
+.PHONY : help/Help.cpp.s
+
 inputHandler/InputHandler.o: inputHandler/InputHandler.cpp.o
 .PHONY : inputHandler/InputHandler.o
 
@@ -436,6 +460,9 @@ help:
 	@echo "... test"
 	@echo "... runGame"
 	@echo "... runTests"
+	@echo "... help/Help.o"
+	@echo "... help/Help.i"
+	@echo "... help/Help.s"
 	@echo "... inputHandler/InputHandler.o"
 	@echo "... inputHandler/InputHandler.i"
 	@echo "... inputHandler/InputHandler.s"
