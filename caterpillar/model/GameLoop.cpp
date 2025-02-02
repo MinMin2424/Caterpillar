@@ -74,13 +74,13 @@ void GameLoop::gameLogicThread(GameField &game_field, Caterpillar &caterpillar, 
  */
 void GameLoop::gameLoop() {
     Caterpillar caterpillar(5, 5, UP);
-    GameField game_field(40, 10, caterpillar);
+    GameField game_field(40, 20, caterpillar);
     Renderer renderer;
     InputHandler_Linux input_handler;
     bool gameRunning = true;
     int tickDurationMs = 500;
 
-    // system("clear");
+    system("clear");
 
     thread input_thread(inputThread, ref(input_handler), ref(caterpillar), ref(gameRunning));
     thread render_thread(renderThread, ref(renderer), ref(game_field), ref(caterpillar), ref(gameRunning));
@@ -102,6 +102,7 @@ void GameLoop::gameLoop() {
 void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning) {
 
     int dx = 0, dy = 0;
+
     switch (caterpillar.getDirection()) {
         case UP: dy = -1; break;
         case DOWN: dy = 1; break;
@@ -140,9 +141,9 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
 void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer) {
 
     cout << "\033[H";
-    cout << "Score: " << caterpillar.getScore() << "; Lives ♥ : " << caterpillar.getLives() << endl;
-    cout << "Collect cabbage for 1 point!!!" << endl;
-    cout << "Collect strawberry for 2 points!!!" << endl;
+    cout << "Score: " << caterpillar.getScore() << "; Lives ❤️ : " << caterpillar.getLives() << endl;
+    cout << "Collect cabbage 🥬 for 1 point!!!" << endl;
+    cout << "Collect strawberry 🍓 for 2 points!!!" << endl;
     renderer.drawField(game_field, caterpillar);
 
 }

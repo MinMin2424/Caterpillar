@@ -47,7 +47,10 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
             Point position(x, y);
 
             if (position.isEqual(caterpillar.getHead())) {
-                cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << "O" << ANSI_COLOR_RESET;
+                cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << " O" << ANSI_COLOR_RESET;
+            }
+            else if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
+                cout << EMPTY_BG << EMPTY_FG << "🧱" << ANSI_COLOR_RESET;
 
             } else {
                 // Check if the point position is part of the caterpillar's body
@@ -59,16 +62,16 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
                     }
                 }
                 if (isInCaterpillar) {
-                    cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << "o" << ANSI_COLOR_RESET;
+                    cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << " o" << ANSI_COLOR_RESET;
 
                 } else if (position.isEqual((cabbagePosition))) {
-                    cout << CABBAGE_BG << CABBAGE_FG << ANSI_BOLD << "*" << ANSI_COLOR_RESET;
+                    cout << CABBAGE_BG << CABBAGE_FG << ANSI_BOLD << "🥬" << ANSI_COLOR_RESET;
 
                 } else if (position.isEqual(strawberryPosition)) {
-                    cout << STRAWBERRY_BG << STRAWBERRY_FG << ANSI_BOLD << "s" << ANSI_COLOR_RESET;
+                    cout << STRAWBERRY_BG << STRAWBERRY_FG << ANSI_BOLD << "🍓" << ANSI_COLOR_RESET;
 
                 } else {
-                    cout << EMPTY_BG << EMPTY_FG << ANSI_BOLD << "." << ANSI_COLOR_RESET;
+                    cout << EMPTY_BG << EMPTY_FG << ANSI_BOLD << " ." << ANSI_COLOR_RESET;
 
                 }
             }

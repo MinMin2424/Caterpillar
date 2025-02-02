@@ -52,7 +52,7 @@ void Caterpillar::setDirection(Direction new_direction) {
         (new_direction == LEFT && direction == RIGHT) ||
         (new_direction == RIGHT && direction == LEFT)) {
         return ;
-        }
+    }
     direction = new_direction;
 
 }
@@ -77,13 +77,14 @@ void Caterpillar::grow(Food food) {
     switch (food) {
         case CABBAGE:
             score += 1;
+            length++;
             break;
         case STRAWBERRY:
             score += 2;
+            length = length + 2;
             break;
     }
     body.emplace_back(body.back());
-    length++;
 }
 
 /**
@@ -117,8 +118,8 @@ bool Caterpillar::checkCollision(int fieldWidth, int fieldHeight) const {
     int borderHeight = fieldHeight - 1;
 
     // Check if the head has collided with the borders
-    if (head.x < 0 || head.y < 0 || head.x > borderWidth || head.y > borderHeight) {
-        cout << "Collision with border!" << endl;
+    if (head.x <= 0 || head.y <= 0 || head.x >= borderWidth -1 || head.y >= borderHeight-1) {
+        cout << "Collision with border!💥" << endl;
         return true;
     }
 

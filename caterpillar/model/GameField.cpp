@@ -20,8 +20,8 @@ using namespace std;
 GameField::GameField(int width, int height, Caterpillar &caterpillar) :
     width(width), height(height),
     random(random_device{} ()),
-    distributionX(0, width - 1),
-    distributionY(0, height - 1)
+    distributionX(1, width - 2),
+    distributionY(1, height - 2)
 {
     placeCabbage(caterpillar);
     placeStrawberry(caterpillar);
