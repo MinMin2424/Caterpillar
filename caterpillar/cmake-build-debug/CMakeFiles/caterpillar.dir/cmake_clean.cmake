@@ -15,6 +15,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/caterpillar.dir/model/Point.cpp.o.d"
   "CMakeFiles/caterpillar.dir/render/Renderer.cpp.o"
   "CMakeFiles/caterpillar.dir/render/Renderer.cpp.o.d"
+  "CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o"
+  "CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o.d"
+  "CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o"
+  "CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o.d"
+  "CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o"
+  "CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o.d"
   "caterpillar"
   "caterpillar.pdb"
 )

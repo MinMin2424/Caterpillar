@@ -9,8 +9,8 @@
 
 class InputHandler {
 public:
-    static char getInput();
-    static void handleInput(Caterpillar& caterpillar);
+    char getInput();
+    void handleInput(Caterpillar& caterpillar);
 };
 
 

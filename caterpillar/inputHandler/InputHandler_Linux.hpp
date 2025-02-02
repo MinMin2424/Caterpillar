@@ -9,8 +9,8 @@
 
 class InputHandler_Linux {
 public:
-    static char getInput();
-    static void handleInput(Caterpillar& caterpillar);
+    char getInput();
+    void handleInput(Caterpillar& caterpillar);
 };
 
 

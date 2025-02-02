@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-deb
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -117,24 +127,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named caterpillar
+# Target rules for targets named runGame
 
 # Build rule for target.
-caterpillar: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 caterpillar
-.PHONY : caterpillar
+runGame: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runGame
+.PHONY : runGame
 
 # fast build rule for target.
-caterpillar/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/build
-.PHONY : caterpillar/fast
+runGame/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/build
+.PHONY : runGame/fast
+
+#=============================================================================
+# Target rules for targets named runTests
+
+# Build rule for target.
+runTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTests
+.PHONY : runTests
+
+# fast build rule for target.
+runTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
 
 inputHandler/InputHandler.o: inputHandler/InputHandler.cpp.o
 .PHONY : inputHandler/InputHandler.o
 
 # target to build an object file
 inputHandler/InputHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/inputHandler/InputHandler.cpp.o
 .PHONY : inputHandler/InputHandler.cpp.o
 
 inputHandler/InputHandler.i: inputHandler/InputHandler.cpp.i
@@ -142,7 +165,7 @@ inputHandler/InputHandler.i: inputHandler/InputHandler.cpp.i
 
 # target to preprocess a source file
 inputHandler/InputHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/inputHandler/InputHandler.cpp.i
 .PHONY : inputHandler/InputHandler.cpp.i
 
 inputHandler/InputHandler.s: inputHandler/InputHandler.cpp.s
@@ -150,7 +173,7 @@ inputHandler/InputHandler.s: inputHandler/InputHandler.cpp.s
 
 # target to generate assembly for a file
 inputHandler/InputHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/inputHandler/InputHandler.cpp.s
 .PHONY : inputHandler/InputHandler.cpp.s
 
 inputHandler/InputHandler_Linux.o: inputHandler/InputHandler_Linux.cpp.o
@@ -158,7 +181,7 @@ inputHandler/InputHandler_Linux.o: inputHandler/InputHandler_Linux.cpp.o
 
 # target to build an object file
 inputHandler/InputHandler_Linux.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/inputHandler/InputHandler_Linux.cpp.o
 .PHONY : inputHandler/InputHandler_Linux.cpp.o
 
 inputHandler/InputHandler_Linux.i: inputHandler/InputHandler_Linux.cpp.i
@@ -166,7 +189,7 @@ inputHandler/InputHandler_Linux.i: inputHandler/InputHandler_Linux.cpp.i
 
 # target to preprocess a source file
 inputHandler/InputHandler_Linux.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/inputHandler/InputHandler_Linux.cpp.i
 .PHONY : inputHandler/InputHandler_Linux.cpp.i
 
 inputHandler/InputHandler_Linux.s: inputHandler/InputHandler_Linux.cpp.s
@@ -174,7 +197,7 @@ inputHandler/InputHandler_Linux.s: inputHandler/InputHandler_Linux.cpp.s
 
 # target to generate assembly for a file
 inputHandler/InputHandler_Linux.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/inputHandler/InputHandler_Linux.cpp.s
 .PHONY : inputHandler/InputHandler_Linux.cpp.s
 
 main.o: main.cpp.o
@@ -182,7 +205,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -190,7 +213,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -198,7 +221,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 model/Caterpillar.o: model/Caterpillar.cpp.o
@@ -206,7 +229,8 @@ model/Caterpillar.o: model/Caterpillar.cpp.o
 
 # target to build an object file
 model/Caterpillar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/Caterpillar.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/Caterpillar.cpp.o
 .PHONY : model/Caterpillar.cpp.o
 
 model/Caterpillar.i: model/Caterpillar.cpp.i
@@ -214,7 +238,8 @@ model/Caterpillar.i: model/Caterpillar.cpp.i
 
 # target to preprocess a source file
 model/Caterpillar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/Caterpillar.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/Caterpillar.cpp.i
 .PHONY : model/Caterpillar.cpp.i
 
 model/Caterpillar.s: model/Caterpillar.cpp.s
@@ -222,7 +247,8 @@ model/Caterpillar.s: model/Caterpillar.cpp.s
 
 # target to generate assembly for a file
 model/Caterpillar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Caterpillar.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/Caterpillar.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/Caterpillar.cpp.s
 .PHONY : model/Caterpillar.cpp.s
 
 model/GameField.o: model/GameField.cpp.o
@@ -230,7 +256,8 @@ model/GameField.o: model/GameField.cpp.o
 
 # target to build an object file
 model/GameField.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameField.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/GameField.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/GameField.cpp.o
 .PHONY : model/GameField.cpp.o
 
 model/GameField.i: model/GameField.cpp.i
@@ -238,7 +265,8 @@ model/GameField.i: model/GameField.cpp.i
 
 # target to preprocess a source file
 model/GameField.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameField.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/GameField.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/GameField.cpp.i
 .PHONY : model/GameField.cpp.i
 
 model/GameField.s: model/GameField.cpp.s
@@ -246,7 +274,8 @@ model/GameField.s: model/GameField.cpp.s
 
 # target to generate assembly for a file
 model/GameField.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameField.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/GameField.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/GameField.cpp.s
 .PHONY : model/GameField.cpp.s
 
 model/GameLoop.o: model/GameLoop.cpp.o
@@ -254,7 +283,7 @@ model/GameLoop.o: model/GameLoop.cpp.o
 
 # target to build an object file
 model/GameLoop.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameLoop.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/GameLoop.cpp.o
 .PHONY : model/GameLoop.cpp.o
 
 model/GameLoop.i: model/GameLoop.cpp.i
@@ -262,7 +291,7 @@ model/GameLoop.i: model/GameLoop.cpp.i
 
 # target to preprocess a source file
 model/GameLoop.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameLoop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/GameLoop.cpp.i
 .PHONY : model/GameLoop.cpp.i
 
 model/GameLoop.s: model/GameLoop.cpp.s
@@ -270,7 +299,7 @@ model/GameLoop.s: model/GameLoop.cpp.s
 
 # target to generate assembly for a file
 model/GameLoop.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/GameLoop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/GameLoop.cpp.s
 .PHONY : model/GameLoop.cpp.s
 
 model/Point.o: model/Point.cpp.o
@@ -278,7 +307,8 @@ model/Point.o: model/Point.cpp.o
 
 # target to build an object file
 model/Point.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/Point.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/Point.cpp.o
 .PHONY : model/Point.cpp.o
 
 model/Point.i: model/Point.cpp.i
@@ -286,7 +316,8 @@ model/Point.i: model/Point.cpp.i
 
 # target to preprocess a source file
 model/Point.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/Point.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/Point.cpp.i
 .PHONY : model/Point.cpp.i
 
 model/Point.s: model/Point.cpp.s
@@ -294,7 +325,8 @@ model/Point.s: model/Point.cpp.s
 
 # target to generate assembly for a file
 model/Point.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/model/Point.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/model/Point.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/model/Point.cpp.s
 .PHONY : model/Point.cpp.s
 
 render/Renderer.o: render/Renderer.cpp.o
@@ -302,7 +334,7 @@ render/Renderer.o: render/Renderer.cpp.o
 
 # target to build an object file
 render/Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/render/Renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/render/Renderer.cpp.o
 .PHONY : render/Renderer.cpp.o
 
 render/Renderer.i: render/Renderer.cpp.i
@@ -310,7 +342,7 @@ render/Renderer.i: render/Renderer.cpp.i
 
 # target to preprocess a source file
 render/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/render/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/render/Renderer.cpp.i
 .PHONY : render/Renderer.cpp.i
 
 render/Renderer.s: render/Renderer.cpp.s
@@ -318,8 +350,80 @@ render/Renderer.s: render/Renderer.cpp.s
 
 # target to generate assembly for a file
 render/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/render/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/render/Renderer.cpp.s
 .PHONY : render/Renderer.cpp.s
+
+tests/CaterpillarTest.o: tests/CaterpillarTest.cpp.o
+.PHONY : tests/CaterpillarTest.o
+
+# target to build an object file
+tests/CaterpillarTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/CaterpillarTest.cpp.o
+.PHONY : tests/CaterpillarTest.cpp.o
+
+tests/CaterpillarTest.i: tests/CaterpillarTest.cpp.i
+.PHONY : tests/CaterpillarTest.i
+
+# target to preprocess a source file
+tests/CaterpillarTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/CaterpillarTest.cpp.i
+.PHONY : tests/CaterpillarTest.cpp.i
+
+tests/CaterpillarTest.s: tests/CaterpillarTest.cpp.s
+.PHONY : tests/CaterpillarTest.s
+
+# target to generate assembly for a file
+tests/CaterpillarTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/CaterpillarTest.cpp.s
+.PHONY : tests/CaterpillarTest.cpp.s
+
+tests/GameFieldTest.o: tests/GameFieldTest.cpp.o
+.PHONY : tests/GameFieldTest.o
+
+# target to build an object file
+tests/GameFieldTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/GameFieldTest.cpp.o
+.PHONY : tests/GameFieldTest.cpp.o
+
+tests/GameFieldTest.i: tests/GameFieldTest.cpp.i
+.PHONY : tests/GameFieldTest.i
+
+# target to preprocess a source file
+tests/GameFieldTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/GameFieldTest.cpp.i
+.PHONY : tests/GameFieldTest.cpp.i
+
+tests/GameFieldTest.s: tests/GameFieldTest.cpp.s
+.PHONY : tests/GameFieldTest.s
+
+# target to generate assembly for a file
+tests/GameFieldTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/GameFieldTest.cpp.s
+.PHONY : tests/GameFieldTest.cpp.s
+
+tests/PointTest.o: tests/PointTest.cpp.o
+.PHONY : tests/PointTest.o
+
+# target to build an object file
+tests/PointTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/PointTest.cpp.o
+.PHONY : tests/PointTest.cpp.o
+
+tests/PointTest.i: tests/PointTest.cpp.i
+.PHONY : tests/PointTest.i
+
+# target to preprocess a source file
+tests/PointTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/PointTest.cpp.i
+.PHONY : tests/PointTest.cpp.i
+
+tests/PointTest.s: tests/PointTest.cpp.s
+.PHONY : tests/PointTest.s
+
+# target to generate assembly for a file
+tests/PointTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/tests/PointTest.cpp.s
+.PHONY : tests/PointTest.cpp.s
 
 # Help Target
 help:
@@ -329,7 +433,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... caterpillar"
+	@echo "... test"
+	@echo "... runGame"
+	@echo "... runTests"
 	@echo "... inputHandler/InputHandler.o"
 	@echo "... inputHandler/InputHandler.i"
 	@echo "... inputHandler/InputHandler.s"
@@ -354,6 +460,15 @@ help:
 	@echo "... render/Renderer.o"
 	@echo "... render/Renderer.i"
 	@echo "... render/Renderer.s"
+	@echo "... tests/CaterpillarTest.o"
+	@echo "... tests/CaterpillarTest.i"
+	@echo "... tests/CaterpillarTest.s"
+	@echo "... tests/GameFieldTest.o"
+	@echo "... tests/GameFieldTest.i"
+	@echo "... tests/GameFieldTest.s"
+	@echo "... tests/PointTest.o"
+	@echo "... tests/PointTest.i"
+	@echo "... tests/PointTest.s"
 .PHONY : help
 
 

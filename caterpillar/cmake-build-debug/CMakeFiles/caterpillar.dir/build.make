@@ -181,6 +181,48 @@ CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/inputHandler/InputHandler_Linux.cpp -o CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.s
 
+CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/CaterpillarTest.cpp
+CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o -MF CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o.d -o CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/CaterpillarTest.cpp
+
+CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/CaterpillarTest.cpp > CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.i
+
+CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/CaterpillarTest.cpp -o CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.s
+
+CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/GameFieldTest.cpp
+CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o -MF CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o.d -o CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/GameFieldTest.cpp
+
+CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/GameFieldTest.cpp > CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.i
+
+CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/GameFieldTest.cpp -o CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.s
+
+CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o: CMakeFiles/caterpillar.dir/flags.make
+CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o: /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/PointTest.cpp
+CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o: CMakeFiles/caterpillar.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o -MF CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o.d -o CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o -c /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/PointTest.cpp
+
+CMakeFiles/caterpillar.dir/tests/PointTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/caterpillar.dir/tests/PointTest.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/PointTest.cpp > CMakeFiles/caterpillar.dir/tests/PointTest.cpp.i
+
+CMakeFiles/caterpillar.dir/tests/PointTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/caterpillar.dir/tests/PointTest.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/minmin_tranova/Caterpillar/caterpillar/tests/PointTest.cpp -o CMakeFiles/caterpillar.dir/tests/PointTest.cpp.s
+
 # Object files for target caterpillar
 caterpillar_OBJECTS = \
 "CMakeFiles/caterpillar.dir/main.cpp.o" \
@@ -190,7 +232,10 @@ caterpillar_OBJECTS = \
 "CMakeFiles/caterpillar.dir/model/Point.cpp.o" \
 "CMakeFiles/caterpillar.dir/render/Renderer.cpp.o" \
 "CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.o" \
-"CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.o"
+"CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.o" \
+"CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o" \
+"CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o" \
+"CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o"
 
 # External object files for target caterpillar
 caterpillar_EXTERNAL_OBJECTS =
@@ -203,9 +248,12 @@ caterpillar: CMakeFiles/caterpillar.dir/model/Point.cpp.o
 caterpillar: CMakeFiles/caterpillar.dir/render/Renderer.cpp.o
 caterpillar: CMakeFiles/caterpillar.dir/inputHandler/InputHandler.cpp.o
 caterpillar: CMakeFiles/caterpillar.dir/inputHandler/InputHandler_Linux.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/tests/CaterpillarTest.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/tests/GameFieldTest.cpp.o
+caterpillar: CMakeFiles/caterpillar.dir/tests/PointTest.cpp.o
 caterpillar: CMakeFiles/caterpillar.dir/build.make
 caterpillar: CMakeFiles/caterpillar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable caterpillar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable caterpillar"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/caterpillar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

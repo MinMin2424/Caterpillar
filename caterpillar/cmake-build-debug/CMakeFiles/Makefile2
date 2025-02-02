@@ -63,7 +63,8 @@ CMAKE_BINARY_DIR = /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-deb
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/caterpillar.dir/all
+all: CMakeFiles/runGame.dir/all
+all: CMakeFiles/runTests.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +72,61 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/caterpillar.dir/clean
+clean: CMakeFiles/runGame.dir/clean
+clean: CMakeFiles/runTests.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/caterpillar.dir
+# Target rules for target CMakeFiles/runGame.dir
 
 # All Build rule for target.
-CMakeFiles/caterpillar.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target caterpillar"
-.PHONY : CMakeFiles/caterpillar.dir/all
+CMakeFiles/runGame.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target runGame"
+.PHONY : CMakeFiles/runGame.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/caterpillar.dir/rule: cmake_check_build_system
+CMakeFiles/runGame.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/caterpillar.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/runGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/caterpillar.dir/rule
+.PHONY : CMakeFiles/runGame.dir/rule
 
 # Convenience name for target.
-caterpillar: CMakeFiles/caterpillar.dir/rule
-.PHONY : caterpillar
+runGame: CMakeFiles/runGame.dir/rule
+.PHONY : runGame
 
 # clean rule for target.
-CMakeFiles/caterpillar.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/caterpillar.dir/build.make CMakeFiles/caterpillar.dir/clean
-.PHONY : CMakeFiles/caterpillar.dir/clean
+CMakeFiles/runGame.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runGame.dir/build.make CMakeFiles/runGame.dir/clean
+.PHONY : CMakeFiles/runGame.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/runTests.dir
+
+# All Build rule for target.
+CMakeFiles/runTests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13,14,15,16 "Built target runTests"
+.PHONY : CMakeFiles/runTests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/runTests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/runTests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/minmin_tranova/Caterpillar/caterpillar/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/runTests.dir/rule
+
+# Convenience name for target.
+runTests: CMakeFiles/runTests.dir/rule
+.PHONY : runTests
+
+# clean rule for target.
+CMakeFiles/runTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/clean
+.PHONY : CMakeFiles/runTests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

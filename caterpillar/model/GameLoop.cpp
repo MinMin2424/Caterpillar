@@ -26,6 +26,7 @@ void GameLoop::gameLoop() {
     Caterpillar caterpillar(5, 5, UP);
     GameField game_field(40, 10, caterpillar);
     Renderer renderer;
+    InputHandler_Linux input_handler;
     bool gameRunning = true;
 
     const int tick_duration_ms = 500;
@@ -38,7 +39,7 @@ void GameLoop::gameLoop() {
         renderGameLoop(game_field, caterpillar, renderer);
 
         // InputHandler::handleInput(caterpillar);
-        InputHandler_Linux::handleInput(caterpillar);
+        input_handler.handleInput(caterpillar);
 
         auto current_time = chrono::steady_clock::now();
         auto elapsed_time = chrono::duration_cast<chrono::milliseconds>(current_time - last_move_time);

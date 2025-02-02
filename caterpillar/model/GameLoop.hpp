@@ -12,10 +12,9 @@
 void gameLoop();
 
 class GameLoop {
-private:
+public:
     static void moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning);
     static void renderGameLoop(GameField &game_field, Caterpillar &caterpillar, Renderer &renderer);
-public:
     static void gameLoop();
 };
 
