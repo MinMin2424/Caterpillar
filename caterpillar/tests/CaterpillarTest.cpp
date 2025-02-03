@@ -39,8 +39,6 @@ TEST_F(CaterpillarTest, MoveRight) {
     EXPECT_EQ(caterpillar.getBody().size(), 1);
 }
 
-
-
 TEST_F(CaterpillarTest, MoveUp) {
     caterpillar.setDirection(UP);
     caterpillar.move(0, -1);

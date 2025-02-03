@@ -32,23 +32,23 @@ void InputHandler::handleInput(Caterpillar &caterpillar) {
     switch (getInput()) {
         case 'w': // UP
             caterpillar.setDirection(UP);
-        break;
+            break;
         case 's': // DOWN
             caterpillar.setDirection(DOWN);
-        break;
+            break;
         case 'a': // LEFT
             caterpillar.setDirection(LEFT);
-        break;
+            break;
         case 'd': // RIGHT
             caterpillar.setDirection(RIGHT);
-        break;
+            break;
         case 'q':
             cout << "Quit" << endl;
-        throw runtime_error("Quit command received");
-        exit(0);
+            throw runtime_error("Quit command received");
+            exit(0);
         default:
             cout << "Invalid Input" << endl;
-        break;
+            break;
     }
 
 }

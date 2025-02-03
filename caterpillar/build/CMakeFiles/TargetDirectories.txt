@@ -1,5 +1,0 @@
-/mnt/c/minmin_tranova/Caterpillar/caterpillar/build/CMakeFiles/runGame.dir
-/mnt/c/minmin_tranova/Caterpillar/caterpillar/build/CMakeFiles/runTests.dir
-/mnt/c/minmin_tranova/Caterpillar/caterpillar/build/CMakeFiles/test.dir
-/mnt/c/minmin_tranova/Caterpillar/caterpillar/build/CMakeFiles/edit_cache.dir
-/mnt/c/minmin_tranova/Caterpillar/caterpillar/build/CMakeFiles/rebuild_cache.dir
