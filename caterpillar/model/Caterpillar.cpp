@@ -118,7 +118,7 @@ bool Caterpillar::checkCollision(int fieldWidth, int fieldHeight) const {
     int borderHeight = fieldHeight - 1;
 
     // Check if the head has collided with the borders
-    if (head.x <= 0 || head.y <= 0 || head.x >= borderWidth -1 || head.y >= borderHeight-1) {
+    if (head.x <= 0 || head.y <= 0 || head.x >= borderWidth || head.y >= borderHeight) {
         cout << "Collision with border!💥" << endl;
         return true;
     }

@@ -17,6 +17,7 @@ private:
     int width, height;
     Point cabbage;
     Point strawberry;
+    Point bomb;
     mt19937 random;
     uniform_int_distribution<int> distributionX;
     uniform_int_distribution<int> distributionY;
@@ -25,10 +26,13 @@ public:
     GameField(int width, int height, Caterpillar &caterpillar);
     void placeCabbage(Caterpillar &caterpillar);
     void placeStrawberry(Caterpillar &caterpillar);
+    void placeBomb(Caterpillar &caterpillar);
     [[nodiscard]] Point getCabbage() const;
     [[nodiscard]] Point getStrawberry() const;
+    [[nodiscard]] Point getBomb() const;
     [[nodiscard]] bool isCabbageEaten(const Point& caterpillarHead) const;
     [[nodiscard]] bool isStrawberryEaten(const Point& caterpillarHead) const;
+    [[nodiscard]] bool isBombTouched(const Point &caterpillarHead) const;
     [[nodiscard]] int getWidth() const;
     [[nodiscard]] int getHeight() const;
 

@@ -72,9 +72,9 @@ void GameLoop::gameLogicThread(GameField &game_field, Caterpillar &caterpillar, 
  * The main game loop that starts the threads and controls the flow of the game.
  * This method initializes the game objects and starts the input, render, and game logic threads.
  */
-void GameLoop::gameLoop() {
+void GameLoop::gameLoop(int width, int height) {
     Caterpillar caterpillar(5, 5, UP);
-    GameField game_field(40, 20, caterpillar);
+    GameField game_field(width, height, caterpillar);
     Renderer renderer;
     InputHandler_Linux input_handler;
     bool gameRunning = true;
@@ -126,6 +126,10 @@ void GameLoop::moveCaterpillar(GameField &game_field, Caterpillar &caterpillar, 
     } else if (game_field.isStrawberryEaten(caterpillar.getHead())) {
         caterpillar.grow(STRAWBERRY);
         game_field.placeStrawberry(caterpillar);
+
+    } else if (game_field.isBombTouched(caterpillar.getHead())) {
+        cout << "Game over!" << endl;
+        gameRunning = false;
     }
 
 }
@@ -144,6 +148,7 @@ void GameLoop::renderGameLoop(GameField &game_field, Caterpillar &caterpillar, R
     cout << "Score: " << caterpillar.getScore() << "; Lives ❤️ : " << caterpillar.getLives() << endl;
     cout << "Collect cabbage 🥬 for 1 point!!!" << endl;
     cout << "Collect strawberry 🍓 for 2 points!!!" << endl;
+    cout << "Don't touch bomb 💣, otherwise you die!!!" << endl;
     renderer.drawField(game_field, caterpillar);
 
 }

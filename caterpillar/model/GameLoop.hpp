@@ -21,7 +21,7 @@ private:
     static void renderThread(Renderer &renderer, GameField &game_field, Caterpillar &caterpillar, bool &gameRunning);
     static void gameLogicThread(GameField &game_field, Caterpillar &caterpillar, bool &gameRunning, int &tickDurationMs);
 public:
-    static void gameLoop();
+    static void gameLoop(int width, int height);
 };
 
 

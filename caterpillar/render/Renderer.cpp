@@ -14,18 +14,10 @@ using namespace std;
 #define ANSI_BACKGROUND(color) "\x1B[48;5;" #color "m"
 #define ANSI_BOLD "\x1B[1m"
 
-#define HEAD_BODY_FG ANSI_FOREGROUND(22)
-// #define HEAD_BODY_BG ANSI_BACKGROUND(40)
 #define HEAD_BODY_BG ANSI_BACKGROUND(193)
-
-#define STRAWBERRY_FG ANSI_FOREGROUND(160)
-// #define STRAWBERRY_BG ANSI_BACKGROUND(204)
 #define STRAWBERRY_BG ANSI_BACKGROUND(193)
-
-#define CABBAGE_FG ANSI_FOREGROUND(58)
-// #define CABBAGE_BG ANSI_BACKGROUND(228)
 #define CABBAGE_BG ANSI_BACKGROUND(193)
-
+#define BOMB_BG ANSI_BACKGROUND(193)
 #define EMPTY_FG ANSI_FOREGROUND(16)
 #define EMPTY_BG ANSI_BACKGROUND(193)
 
@@ -41,16 +33,17 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
     int height = field.getHeight();
     Point cabbagePosition = field.getCabbage();
     Point strawberryPosition = field.getStrawberry();
+    Point bombPosition = field.getBomb();
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             Point position(x, y);
 
             if (position.isEqual(caterpillar.getHead())) {
-                cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << " O" << ANSI_COLOR_RESET;
+                cout << HEAD_BODY_BG << "🟢" << ANSI_COLOR_RESET;
             }
             else if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
-                cout << EMPTY_BG << EMPTY_FG << "🧱" << ANSI_COLOR_RESET;
+                cout << EMPTY_BG << "🧱" << ANSI_COLOR_RESET;
 
             } else {
                 // Check if the point position is part of the caterpillar's body
@@ -62,13 +55,16 @@ void Renderer::drawField(const GameField &field, const Caterpillar &caterpillar)
                     }
                 }
                 if (isInCaterpillar) {
-                    cout << HEAD_BODY_BG << HEAD_BODY_FG << ANSI_BOLD << " o" << ANSI_COLOR_RESET;
+                    cout << HEAD_BODY_BG << "🟡" << ANSI_COLOR_RESET;
 
                 } else if (position.isEqual((cabbagePosition))) {
-                    cout << CABBAGE_BG << CABBAGE_FG << ANSI_BOLD << "🥬" << ANSI_COLOR_RESET;
+                    cout << CABBAGE_BG << "🥬" << ANSI_COLOR_RESET;
 
                 } else if (position.isEqual(strawberryPosition)) {
-                    cout << STRAWBERRY_BG << STRAWBERRY_FG << ANSI_BOLD << "🍓" << ANSI_COLOR_RESET;
+                    cout << STRAWBERRY_BG << "🍓" << ANSI_COLOR_RESET;
+
+                } else if (position.isEqual(bombPosition)) {
+                    cout << BOMB_BG << "💣" << ANSI_COLOR_RESET;
 
                 } else {
                     cout << EMPTY_BG << EMPTY_FG << ANSI_BOLD << " ." << ANSI_COLOR_RESET;

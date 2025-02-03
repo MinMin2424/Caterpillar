@@ -25,6 +25,7 @@ GameField::GameField(int width, int height, Caterpillar &caterpillar) :
 {
     placeCabbage(caterpillar);
     placeStrawberry(caterpillar);
+    placeBomb(caterpillar);
 }
 
 /**
@@ -42,7 +43,7 @@ void GameField::placeCabbage(Caterpillar &caterpillar) {
 
         isPositionValid = true;
         for (const Point& part: caterpillar.getBody()) {
-            if (cabbage.isEqual(part) || cabbage.isEqual(getStrawberry())) {
+            if (cabbage.isEqual(part) || cabbage.isEqual(getStrawberry()) || cabbage.isEqual(getBomb())) {
                 isPositionValid = false;
                 break;
             }
@@ -67,7 +68,7 @@ void GameField::placeStrawberry(Caterpillar &caterpillar) {
 
         isPositionValid = true;
         for (const Point& part: caterpillar.getBody()) {
-            if (strawberry.isEqual(part) || strawberry.isEqual(getCabbage())) {
+            if (strawberry.isEqual(part) || strawberry.isEqual(getCabbage()) || strawberry.isEqual(getBomb())) {
                 isPositionValid = false;
                 break;
             }
@@ -75,6 +76,25 @@ void GameField::placeStrawberry(Caterpillar &caterpillar) {
 
     } while (!isPositionValid);
 }
+
+//TODO
+void GameField::placeBomb(Caterpillar &caterpillar) {
+    bool isPositionValid;
+    do {
+        bomb.x = distributionX(random);
+        bomb.y = distributionY(random);
+
+        isPositionValid = true;
+        for (const Point& part: caterpillar.getBody()) {
+            if (bomb.isEqual(part) || bomb.isEqual(getCabbage()) || bomb.isEqual(getStrawberry())) {
+                isPositionValid = false;
+                break;
+            }
+        }
+
+    } while (!isPositionValid);
+}
+
 
 /**
  *  Method to return the position of the cabbage on the game field.
@@ -92,6 +112,11 @@ Point GameField::getCabbage() const {
  */
 Point GameField::getStrawberry() const {
     return strawberry;
+}
+
+//TODO
+Point GameField::getBomb() const {
+    return bomb;
 }
 
 /**
@@ -114,6 +139,11 @@ bool GameField::isCabbageEaten(const Point &caterpillarHead) const {
  */
 bool GameField::isStrawberryEaten(const Point &caterpillarHead) const {
     return caterpillarHead.isEqual(strawberry);
+}
+
+//TODO
+bool GameField::isBombTouched(const Point &caterpillarHead) const {
+    return caterpillarHead.isEqual(bomb);
 }
 
 /**

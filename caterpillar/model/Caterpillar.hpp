@@ -12,6 +12,7 @@ using namespace std;
 
 enum Direction { UP, DOWN, LEFT, RIGHT };
 enum Food { CABBAGE, STRAWBERRY };
+enum Obstacle { BOMB };
 
 class Caterpillar {
 
